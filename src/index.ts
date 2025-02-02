@@ -20,7 +20,7 @@ AppDataSource.initialize().then(() => {
     app.set('view engine', 'ejs'); // Change this if using another engine like Pug
     app.use(express.static(path.join(__dirname, 'public')));
     app.use(bodyParser.urlencoded({ extended: true }));
-    const PORT = process.env.APP_PORT || 8000;
+    const PORT = process.env.PORT || 8000;
 
     app.use('/api/v0/', mainRoutes);
     app.use("/", websiteRoutes);
