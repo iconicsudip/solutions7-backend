@@ -11,7 +11,8 @@
     "migration:run": "npm run typeorm migration:run -- -d ./src/data-source.ts",
     "migrate": "npm run migration:generate && npm run migration:run",
     "build": "tsc",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "vercel-build": "echo build is starting..."
   },
   "keywords": [],
   "author": "",
