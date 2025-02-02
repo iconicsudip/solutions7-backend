@@ -1,0 +1,40 @@
+<div class="portfolio-area-1 space overflow-hidden" style="margin-top: 4rem;">
+    <div class="container">
+        <!-- <div class="title-area text-center ">
+            <h2 class="sec-title">Our Services – Tailored Solutions for Your Brand</h2>
+        </div> -->
+        <div class="row justify-content-between masonary-active">
+            <% data.forEach((item, index)=> { %>
+                <div class="col-lg-<%= index % 2 === 0 ? '7' : '5' %> filter-item">
+                    <div class="portfolio-wrap mt-140">
+                        <div class="portfolio-thumb">
+                            <a href="#">
+                                <img src="<%= item.image %>" alt="portfolio">
+                            </a>
+                        </div>
+                        <div class="portfolio-details">
+                            <h3 class="portfolio-title">
+                                <a href="#">
+                                    <%= item.title %>
+                                </a>
+                            </h3>
+                            <% if (item?.shortDescription) { %>
+                                </p>
+                                <%= item?.shortDescription?.slice(0,80) %>...
+                                    </p>
+                                    <% } %>
+                        </div>
+                        <a href="#" class="link-btn mt-4">
+                            <span class="link-effect">
+                                <span class="effect-1">MORE INFO</span>
+                                <span class="effect-1">MORE INFO</span>
+                            </span>
+                            <img src="assets/img/icon/arrow-left-top.svg" alt="icon">
+                        </a>
+                    </div>
+                </div>
+                <% }); %>
+
+        </div>
+    </div>
+</div>
