@@ -10,7 +10,7 @@
     "migration:generate": "npm run typeorm -- -d ./src/data-source.ts migration:generate ./src/migrations/Migration_$(date +%Y%m%d%H%M%S)",
     "migration:run": "npm run typeorm migration:run -- -d ./src/data-source.ts",
     "migrate": "npm run migration:generate && npm run migration:run",
-    "build": "tsc && cp -R src/views dist/views",
+    "build": "tsc && npx cpy src/views dist && npx cpy src/public dist",
     "test": "echo \"Error: no test specified\" && exit 1",
     "vercel-build": "echo build is starting..."
   },
