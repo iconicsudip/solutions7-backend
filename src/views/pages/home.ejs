@@ -1,62 +1,74 @@
-<div class="hero-wrapper hero-1" id="hero">
-    <div class="container">
-        <div class="hero-style1">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h1 class="hero-title wow img-custom-anim-left" data-wow-duration="1.5s" data-wow-delay="0.1s">
-                        We Are Your Solutions Team
-                    </h1>
-                    <h1 class="hero-title text-lg-end wow img-custom-anim-right" data-wow-duration="1.7s"
-                        data-wow-delay="0.1s">End-to-End Services, Zero Hassle</h1>
-                </div>
-                <div class="col-lg-6 offset-lg-6">
-                    <p class="hero-text wow img-custom-anim-right" data-wow-duration="1.5s" data-wow-delay="0.1s">
-                        Forget juggling multiple agencies. We handle it all in-house, offering personalized,
-                        result-driven solutions. Your brand, our mission.
-                    </p>
-                    <div class="btn-group fade_right">
-                        <a href="project.html" class="btn wow img-custom-anim-right">
-                            <span class="link-effect">
-                                <span class="effect-1">LET'S GET STARTED</span>
-                                <span class="effect-1">LET'S GET STARTED</span>
-                            </span>
-                        </a>
+<% const content=data.aboutUs.description; const contentArray=content.split("\n"); %>
+    <div class="hero-wrapper hero-1" id="hero">
+        <div class="container">
+            <div class="hero-style1">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="hero-title wow img-custom-anim-left" data-wow-duration="1.5s" data-wow-delay="0.1s">
+                            <%= data.heroInfo.firstTitle %>
+                        </h1>
+                        <h1 class="hero-title text-lg-end wow img-custom-anim-right" data-wow-duration="1.7s"
+                            data-wow-delay="0.1s">
+                            <%= data.heroInfo.secondTitle %>
+                        </h1>
+                    </div>
+                    <div class="col-lg-6 offset-lg-6">
+                        <p class="hero-text wow img-custom-anim-right" data-wow-duration="1.5s" data-wow-delay="0.1s">
+                            <%= data.heroInfo.description %>
+                        </p>
+                        <div class="btn-group fade_right">
+                            <a href="<%= data.heroInfo.buttonLink %>" class="btn wow img-custom-anim-right">
+                                <span class="link-effect">
+                                    <span class="effect-1">
+                                        <%= (data.heroInfo.buttonText).toUpperCase() %>
+                                    </span>
+                                    <span class="effect-1">
+                                        <%= (data.heroInfo.buttonText).toUpperCase() %>
+                                    </span>
+                                </span>
+                            </a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <!-- <div class="hero-year-tag wow img-custom-anim-left">
+                <!-- <div class="hero-year-tag wow img-custom-anim-left">
                     <img src="assets/img/icon/worldwide.svg" alt="img">
                     <h6>Agency of this year worldwide</h6>
                 </div> -->
+            </div>
         </div>
     </div>
-</div>
-<div class="about-area-1 space bg-theme">
-    <div class="about-img-1-1 shape-mockup img-custom-anim-left wow" data-left="0" data-top="-100px" data-bottom="140px"
-        data-wow-duration="1.5s" data-wow-delay="0.1s">
-        <img src="assets/img/normal/about_1-1.jpg" alt="img">
-    </div>
-    <div class="container">
-        <div class="row align-items-center justify-content-end">
-            <div class="col-lg-6">
-                <div class="overflow-hidden">
-                    <div class="about-content-wrap ">
-                        <div class="title-area mb-0">
-                            <h2 class="sec-title">Who We Are</h2>
-                            <p class="sec-text mt-35">We are a close-knit team of experts—designers, developers,
-                                marketers, photographers, and content creators—who work
-                                together seamlessly to make your brand stand out. We don't just work for you; we
-                                work with you to create results.</p>
-                            <p class="sec-text mt-30">We don’t see ourselves as an agency; we see ourselves as an
-                                extension of your team.</p>
-                            <div class="btn-wrap mt-50">
-                                <a href="about.html" class="link-btn">
-                                    <span class="link-effect">
-                                        <span class="effect-1">ABOUT US</span>
-                                        <span class="effect-1">ABOUT US</span>
-                                    </span>
-                                    <img src="assets/img/icon/arrow-left-top.svg" alt="icon">
-                                </a>
+    <div class="about-area-1 space bg-theme">
+        <div class="about-img-1-1 shape-mockup img-custom-anim-left wow" data-left="0" data-top="-100px"
+            data-bottom="140px" data-wow-duration="1.5s" data-wow-delay="0.1s">
+            <img src="assets/img/normal/about_1-1.jpg" alt="img">
+        </div>
+        <div class="container">
+            <div class="row align-items-center justify-content-end">
+                <div class="col-lg-6">
+                    <div class="overflow-hidden">
+                        <div class="about-content-wrap ">
+                            <div class="title-area mb-0">
+                                <h2 class="sec-title">
+                                    <%= data.aboutUs.title %>
+                                </h2>
+                                <% contentArray.forEach((line, index)=> { %>
+                                    <p class="sec-text <%= index === 0 ? 'mt-35' : 'mt-30' %>">
+                                        <%= line %>
+                                    </p>
+                                    <% }); %>
+                                        <div class="btn-wrap mt-50">
+                                            <a href="<%= data.aboutUs.linkLink %>" class="link-btn">
+                                                <span class="link-effect">
+                                                    <span class="effect-1">
+                                                        <%= (data.aboutUs.linkText).toUpperCase() %>
+                                                    </span>
+                                                    <span class="effect-1">
+                                                        <%= (data.aboutUs.linkText).toUpperCase() %>
+                                                    </span>
+                                                </span>
+                                                <img src="assets/img/icon/arrow-left-top.svg" alt="icon">
+                                            </a>
+                                        </div>
                             </div>
                         </div>
                     </div>
@@ -64,276 +76,167 @@
             </div>
         </div>
     </div>
-</div>
-<div class="faq-area-1 space overflow-hidden">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-xl-6 col-lg-8">
-                <div class="title-area text-center ">
-                    <h2 class="sec-title">Our Services – Tailored Solutions for Your Brand</h2>
-                </div>
-            </div>
-            <div class="feature-area-1">
-                <div class="container">
-                    <div class="row gy-4 align-items-center justify-content-center">
-                        <div class="col-xl-4 col-md-6">
-                            <div class="feature-card">
-                                <div class="feature-card-icon">
-                                    <img src="assets/img/icon/feature-icon1-1.svg" alt="icon">
-                                    <h4 class="feature-card-title">
-                                        <a href="service.html">Website Design & Development</a>
-                                    </h4>
-                                </div>
-                                <p class="feature-card-text">We craft visually stunning, highly functional websites
-                                    that convert visitors into loyal customers. From UI/UX design to
-                                    backend development, we handle it all.</p>
-                                <a href="service-details.html" class="link-btn">
-                                    <span class="link-effect">
-                                        <span class="effect-1">EXPLORE OUR WORK</span>
-                                        <span class="effect-1">EXPLORE OUR WORK</span>
-                                    </span>
-                                    <img src="assets/img/icon/arrow-left-top.svg" alt="icon">
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-xl-4 col-md-6">
-                            <div class="feature-card">
-                                <div class="feature-card-icon">
-                                    <img src="assets/img/icon/feature-icon1-2.svg" alt="icon">
-                                    <h4 class="feature-card-title">
-                                        <a href="service.html">Creative Designing</a>
-                                    </h4>
-                                </div>
-                                <p class="feature-card-text">Your brand needs to stand out. We deliver custom
-                                    branding, graphic design, and creative direction that reflects your
-                                    vision and speaks to your audience.</p>
-                                <a href="service-details.html" class="link-btn">
-                                    <span class="link-effect">
-                                        <span class="effect-1">SEE OUR DESIGNS</span>
-                                        <span class="effect-1">SEE OUR DESIGNS</span>
-                                    </span>
-                                    <img src="assets/img/icon/arrow-left-top.svg" alt="icon">
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-xl-4 col-md-6">
-                            <div class="feature-card">
-                                <div class="feature-card-icon">
-                                    <img src="assets/img/icon/feature-icon1-4.svg" alt="icon">
-                                    <h4 class="feature-card-title">
-                                        <a href="service.html">Social Media Marketing</a>
-                                    </h4>
-                                </div>
-                                <p class="feature-card-text">No fluff, just results. We create social media
-                                    strategies that drive engagement, increase brand awareness, and generate
-                                    leads.</p>
-                                <a href="service-details.html" class="link-btn">
-                                    <span class="link-effect">
-                                        <span class="effect-1">BOOST YOUR SOCIAL PRESENCE</span>
-                                        <span class="effect-1">BOOST YOUR SOCIAL PRESENCE</span>
-                                    </span>
-                                    <img src="assets/img/icon/arrow-left-top.svg" alt="icon">
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-xl-4 col-md-6">
-                            <div class="feature-card">
-                                <div class="feature-card-icon">
-                                    <img src="assets/img/icon/feature-icon1-3.svg" alt="icon">
-                                    <h4 class="feature-card-title">
-                                        <a href="service.html">SEO 360</a>
-                                    </h4>
-                                </div>
-                                <p class="feature-card-text">Get found. Rank higher. We implement a 360-degree SEO
-                                    strategy to ensure your website drives traffic and converts.</p>
-                                <a href="service-details.html" class="link-btn">
-                                    <span class="link-effect">
-                                        <span class="effect-1">GROW YOUR SEARCH RANKINGS</span>
-                                        <span class="effect-1">GROW YOUR SEARCH RANKINGS</span>
-                                    </span>
-                                    <img src="assets/img/icon/arrow-left-top.svg" alt="icon">
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-xl-4 col-md-6">
-                            <div class="feature-card">
-                                <div class="feature-card-icon">
-                                    <img src="assets/img/icon/feature-icon1-5.svg" alt="icon">
-                                    <h4 class="feature-card-title">
-                                        <a href="service.html">Consultancy</a>
-                                    </h4>
-                                </div>
-                                <p class="feature-card-text">From setting up your online store to optimizing for
-                                    conversions, we provide seamless onboarding and continuous support.</p>
-                                <a href="service-details.html" class="link-btn">
-                                    <span class="link-effect">
-                                        <span class="effect-1">START SELLING ONLINE</span>
-                                        <span class="effect-1">START SELLING ONLINE</span>
-                                    </span>
-                                    <img src="assets/img/icon/arrow-left-top.svg" alt="icon">
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-xl-4 col-md-6">
-                            <div class="feature-card">
-                                <div class="feature-card-icon">
-                                    <img src="assets/img/icon/feature-icon1-6.svg" alt="icon">
-                                    <h4 class="feature-card-title">
-                                        <a href="service.html">3D Animations & Video Editing</a>
-                                    </h4>
-                                </div>
-                                <p class="feature-card-text">Create content that captures attention. We specialize
-                                    in 3D animation and professional video editing to elevate your
-                                    brand’s visuals.</p>
-                                <a href="service-details.html" class="link-btn">
-                                    <span class="link-effect">
-                                        <span class="effect-1">VIEW OUR VIDEOS</span>
-                                        <span class="effect-1">VIEW OUR VIDEOS</span>
-                                    </span>
-                                    <img src="assets/img/icon/arrow-left-top.svg" alt="icon">
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-xl-12 col-md-12">
-                            <div class="feature-card">
-                                <div class="feature-card-icon">
-                                    <img src="assets/img/icon/feature-icon1-6.svg" alt="icon">
-                                    <h4 class="feature-card-title">
-                                        <a href="service.html">Photography – Outdoor, Indoor, Moodshoot & Ecommerce
-                                            Shoots</a>
-                                    </h4>
-                                </div>
-                                <p class="feature-card-text">Whether it's product shots, mood shoots, or lifestyle
-                                    images, we provide high-quality photography that aligns with your
-                                    brand and captures the right look.</p>
-                                <a href="service-details.html" class="link-btn">
-                                    <span class="link-effect">
-                                        <span class="effect-1">BOOK A SHOOT</span>
-                                        <span class="effect-1">BOOK A SHOOT</span>
-                                    </span>
-                                    <img src="assets/img/icon/arrow-left-top.svg" alt="icon">
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 
-<div class="counter-area-1 overflow-hidden mb-5 pb-5">
-    <div class="container">
-        <div class="row gy-40 align-items-center justify-content-lg-between justify-content-center">
-            <div class="col-xl-auto col-lg-4 col-md-6 counter-divider">
-                <div class="counter-card">
-                    <h3 class="counter-card_number">
-                        <span class="counter-number">26</span>+
-                    </h3>
-                    <h4 class="counter-card_title">Years of Experience</h4>
-                    <p class="counter-card_text">We are a creative agency brands building insightful strategy,
-                        creating
-                        unique designs helping</p>
-                </div>
-            </div>
-            <div class="col-xl-auto col-lg-4 col-md-6 counter-divider">
-                <div class="counter-card">
-                    <h3 class="counter-card_number">
-                        <span class="counter-number">347</span>+
-                    </h3>
-                    <h4 class="counter-card_title">Successful Projects</h4>
-                    <p class="counter-card_text">We are a creative agency brands building insightful strategy,
-                        creating
-                        unique designs helping</p>
-                </div>
-            </div>
-            <div class="col-xl-auto col-lg-4 col-md-6 counter-divider">
-                <div class="counter-card">
-                    <h3 class="counter-card_number">
-                        <span class="counter-number">139</span>+
-                    </h3>
-                    <h4 class="counter-card_title">Satisfied Customers</h4>
-                    <p class="counter-card_text">We are a creative agency brands building insightful strategy,
-                        creating
-                        unique designs helping</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="container-fluid p-0 overflow-hidden">
-    <div class="slider__marquee clearfix marquee-wrap">
-        <div class="marquee_mode marquee__group">
-            <h6 class="item m-item"><a href="#"><i class="fas fa-star-of-life"></i> We Give Unparalleled
-                    Flexibility</a>
-            </h6>
-            <h6 class="item m-item"><a href="#"><i class="fas fa-star-of-life"></i> We Give Unparalleled
-                    Flexibility</a>
-            </h6>
-            <h6 class="item m-item"><a href="#"><i class="fas fa-star-of-life"></i> We Give Unparalleled
-                    Flexibility</a>
-            </h6>
-            <h6 class="item m-item"><a href="#"><i class="fas fa-star-of-life"></i> We Give Unparalleled
-                    Flexibility</a>
-            </h6>
-        </div>
-    </div>
-</div>
-<div class="testimonial-area-1 space bg-theme mt-0">
-    <div class="testimonial-img-1-1 shape-mockup wow img-custom-anim-right" data-wow-duration="1.5s"
-        data-wow-delay="0.2s" data-right="0" data-bottom="80px">
-        <img src="assets/img/testimonial/testi_thumb1_1.jpg" alt="img">
-    </div>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-6">
-                <div class="title-area ">
-                    <h2 class="sec-title">What Our Clients Are Saying</h2>
-                </div>
-                <div class="quote-icon ">
-                    <img src="assets/img/icon/quote.svg" alt="icon">
-                </div>
-                <div class="row global-carousel testi-slider1" data-slide-show="1" data-dots="true" data-xl-dots="true"
-                    data-ml-dots="true">
-                    <div class="col-lg-4">
-                        <div class="testi-box ">
-                            <p class="testi-box_text">“It’s a pleasure working with Bunker. They understood our new
-                                brand positioning guidelines and translated them beautifully and consistently into
-                                our on-going marketing comms. The team is responsive, quick and always willing help
-                                winning partnership”</p>
-                            <div class="testi-box_profile">
-                                <h4 class="testi-box_name">Daniyel Karlos</h4>
-                                <span class="testi-box_desig">Senior Director of Marketing</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="testi-box ">
-                            <p class="testi-box_text">“It’s a pleasure working with Bunker. They understood our new
-                                brand positioning guidelines and translated them beautifully and consistently into
-                                our on-going marketing comms. The team is responsive, quick and always willing help
-                                winning partnership”</p>
-                            <div class="testi-box_profile">
-                                <h4 class="testi-box_name">Daniyel Karlos</h4>
-                                <span class="testi-box_desig">Senior Director of Marketing</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="testi-box ">
-                            <p class="testi-box_text">“It’s a pleasure working with Bunker. They understood our new
-                                brand positioning guidelines and translated them beautifully and consistently into
-                                our on-going marketing comms. The team is responsive, quick and always willing help
-                                winning partnership”</p>
-                            <div class="testi-box_profile">
-                                <h4 class="testi-box_name">Daniyel Karlos</h4>
-                                <span class="testi-box_desig">Senior Director of Marketing</span>
-                            </div>
-                        </div>
+    <div class="faq-area-1 space overflow-hidden">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-xl-6 col-lg-8">
+                    <div class="title-area text-center ">
+                        <h2 class="sec-title">
+                            <%= data.services.title %>
+                        </h2>
                     </div>
                 </div>
-            </div>
-        </div>
+                <div class="feature-area-1">
+                    <div class="container">
+                        <div class="row gy-4 align-items-center justify-content-center">
+                            <% data.services.services.forEach((service, index)=> {
+                                const totalServices = data.services.services.length;
+                                let cardClass = "col-xl-4 col-md-6"; // Default class
 
+                                // If it's the last card and the total % 3 is 1, make it full width
+                                if (index === totalServices - 1 && totalServices % 3 === 1) {
+                                cardClass = "col-xl-12 col-md-12";
+                                }
+                                // If it's the last two cards and total % 3 is 2, make them half-width
+                                else if (index === totalServices - 2 && totalServices % 3 === 2) {
+                                cardClass = "col-xl-6 col-md-6";
+                                } else if (index === totalServices - 1 && totalServices % 3 === 2) {
+                                cardClass = "col-xl-6 col-md-6";
+                                }
+                                %>
+
+                                <div class="<%= cardClass %>">
+                                    <div class="feature-card">
+                                        <div class="feature-card-icon">
+                                            <img src="assets/img/icon/feature-icon1-1.svg" alt="icon">
+                                            <h4 class="feature-card-title">
+                                                <a href="<%= service?.cardLink %>">
+                                                    <%= service?.title %>
+                                                </a>
+                                            </h4>
+                                        </div>
+                                        <p class="feature-card-text">
+                                            <%= service?.shortDescription?.length> 164 ?
+                                                service.shortDescription.slice(0, 164) + "..." :
+                                                service.shortDescription %>
+                                        </p>
+                                        <a href="<%= service.cardLink %>" class="link-btn">
+                                            <span class="link-effect">
+                                                <span class="effect-1">
+                                                    <%= (service?.cardLinkText)?.toUpperCase() %>
+                                                </span>
+                                                <span class="effect-1">
+                                                    <%= (service?.cardLinkText)?.toUpperCase() %>
+                                                </span>
+                                            </span>
+                                            <img src="assets/img/icon/arrow-left-top.svg" alt="icon">
+                                        </a>
+                                    </div>
+                                </div>
+                                <% }); %>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-</div>
+
+    <div class="counter-area-1 overflow-hidden mb-5 pb-5">
+        <div class="container">
+            <div class="row gy-40 align-items-center justify-content-lg-between justify-content-center">
+                <div class="col-xl-auto col-lg-4 col-md-6 counter-divider">
+                    <div class="counter-card">
+                        <h3 class="counter-card_number">
+                            <span class="counter-number">26</span>+
+                        </h3>
+                        <h4 class="counter-card_title">Years of Experience</h4>
+                        <p class="counter-card_text">We are a creative agency brands building insightful strategy,
+                            creating
+                            unique designs helping</p>
+                    </div>
+                </div>
+                <div class="col-xl-auto col-lg-4 col-md-6 counter-divider">
+                    <div class="counter-card">
+                        <h3 class="counter-card_number">
+                            <span class="counter-number">347</span>+
+                        </h3>
+                        <h4 class="counter-card_title">Successful Projects</h4>
+                        <p class="counter-card_text">We are a creative agency brands building insightful strategy,
+                            creating
+                            unique designs helping</p>
+                    </div>
+                </div>
+                <div class="col-xl-auto col-lg-4 col-md-6 counter-divider">
+                    <div class="counter-card">
+                        <h3 class="counter-card_number">
+                            <span class="counter-number">139</span>+
+                        </h3>
+                        <h4 class="counter-card_title">Satisfied Customers</h4>
+                        <p class="counter-card_text">We are a creative agency brands building insightful strategy,
+                            creating
+                            unique designs helping</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid p-0 overflow-hidden">
+        <div class="slider__marquee clearfix marquee-wrap">
+            <div class="marquee_mode marquee__group">
+                <% data.bannerInfo.bannerText.forEach((item)=> { %>
+                    <h6 class="item m-item">
+                        <a href="#">
+                            <i class="fas fa-star-of-life"></i>
+                            <%= item %>
+                        </a>
+                    </h6>
+                    <% }); %>
+            </div>
+        </div>
+    </div>
+    <div class="testimonial-area-1 space bg-theme mt-0">
+        <div class="testimonial-img-1-1 shape-mockup wow img-custom-anim-right" data-wow-duration="1.5s"
+            data-wow-delay="0.2s" data-right="0" data-bottom="80px">
+            <img src="assets/img/testimonial/testi_thumb1_1.jpg" alt="img">
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="title-area ">
+                        <h2 class="sec-title">
+                            <%= data.testimonial.title %>
+                        </h2>
+                    </div>
+                    <div class="quote-icon ">
+                        <img src="assets/img/icon/quote.svg" alt="icon">
+                    </div>
+                    <div class="row global-carousel testi-slider1" data-slide-show="1" data-dots="true"
+                        data-xl-dots="true" data-ml-dots="true">
+                        <% data.testimonial.testimonials.forEach((testimonial, index)=> {%>
+
+                            <div class="col-lg-4">
+                                <div class="testi-box ">
+                                    <p class="testi-box_text">
+                                        <%= testimonial.testimonial %>
+                                    </p>
+                                    <div class="testi-box_profile">
+                                        <h4 class="testi-box_name">
+                                            <%= testimonial.name %>
+                                        </h4>
+                                        <span class="testi-box_desig">
+                                            <%= testimonial.designation %>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <% }); %>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
