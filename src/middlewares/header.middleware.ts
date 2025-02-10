@@ -9,7 +9,7 @@ const basicInfoService = new BasicInfoService()
 export const fetchHeaderData = async (req: Request, res: Response, next: NextFunction) => {
     try {
         const headers = await headerService.getAllHeaders();
-        const basicInfo = await basicInfoService.getBasicInfoByTypes(["companyName", "companyEmail", "companyLocation", "companyPhoneNumber"])
+        const basicInfo = await basicInfoService.getBasicInfoByTypes(["companyName", "companyEmail", "companyLocation", "companyPhoneNumber", "websiteThemeColor"])
         const formatHeaders = headers.map((header) => {
             if (header.headerNameType === HeaderNameType.PAGE) {
                 return {
