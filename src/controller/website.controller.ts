@@ -32,7 +32,7 @@ export const homePage = async (req: Request, res: Response, next: NextFunction):
                 pageContentSection[content.section][content.contentType] = JSON.parse(content.content);
             }
         }))
-        const bannerInfo = await basicInfoService.getBasicInfoByTypes(["bannerText"])
+        const bannerInfo = await basicInfoService.getBasicInfoByTypes(["bannerText", "isShowBanner"])
 
         const response = {
             ...pageContentSection,
@@ -71,7 +71,7 @@ export const pricingPage = async (req: Request, res: Response, next: NextFunctio
 
 export const contactPage = async (req: Request, res: Response, next: NextFunction): Promise<any> => {
     try {
-        const contactInfo = await basicInfoService.getBasicInfoByTypes(["companyEmail", "companyLocation", "companyPhoneNumber"])
+        const contactInfo = await basicInfoService.getBasicInfoByTypes(["companyEmail", "companyLocation", "companyPhoneNumber", "companyLocationIframe"])
         return res.render('pages/main', { title: 'Contact - 7solutions', body: 'contact', data: contactInfo });
     } catch (error: any) {
         return generateResponse(res, 500, {}, error.message);

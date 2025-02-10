@@ -1,7 +1,7 @@
 import { Column, Entity, PrimaryGeneratedColumn, ManyToOne, JoinColumn, OneToMany, BaseEntity } from "typeorm";
 import { Page } from "./page";
 
-enum HeaderNameType {
+export enum HeaderNameType {
     PAGE = "PAGE",
     SUB_PAGES = "SUB_PAGES",
 }

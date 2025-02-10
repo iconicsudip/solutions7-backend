@@ -8,7 +8,7 @@
                     </div>
                     <div class="feature-card-details">
                         <h4 class="feature-card-title">
-                            <a href="project.html">Office Location</a>
+                            Office Location
                         </h4>
                         <p class="feature-card-text">
                             <%= data.companyLocation %>
@@ -31,7 +31,7 @@
                     </div>
                     <div class="feature-card-details">
                         <h4 class="feature-card-title">
-                            <a href="project.html">Email Address</a>
+                            Email Address
                         </h4>
                         <p class="feature-card-text">
                             <%= data.companyEmail %>
@@ -53,7 +53,7 @@
                     </div>
                     <div class="feature-card-details">
                         <h4 class="feature-card-title">
-                            <a href="project.html">Phone Number</a>
+                            Contact Number
                         </h4>
                         <p class="feature-card-text">+91 <%= data.companyPhoneNumber %>
                         </p>
@@ -72,62 +72,65 @@
     </div>
 </div>
 <div class="contact-area-1 space bg-theme">
-    <div class="contact-map shape-mockup wow img-custom-anim-left" data-wow-duration="1.5s" data-wow-delay="0.2s"
-        data-left="0" data-top="-100px" data-bottom="140px">
-        <iframe
-            src="https://maps.google.com/maps?q=London%20Eye%2C%20London%2C%20United%20Kingdom&amp;t=m&amp;z=10&amp;output=embed&amp;iwloc=near"
-            allowfullscreen="" loading="lazy"></iframe>
-    </div>
-    <div class="container">
-        <div class="row align-items-center justify-content-end">
-            <div class="col-lg-6">
-                <div class="contact-form-wrap">
-                    <div class="title-area mb-30">
-                        <h2 class="sec-title">Let’s Start Your Project Today</h2>
-                        <p>Have a question or ready to get started? Fill out the form below or contact us directly,
-                            and we’ll get back to you as
-                            soon as possible.</p>
-                    </div>
-                    <form id="contact-form" action="/contact" method="POST" class="contact-form ajax-contact">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <input type="text" class="form-control style-border" name="name" id="name"
-                                        placeholder="Full name*" required>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <input type="email" class="form-control style-border" name="email" id="email"
-                                        placeholder="Email address*" required>
-                                </div>
-                            </div>
-                            <div class="col-lg-12">
-                                <div class="form-group">
-                                    <input type="tel" class="form-control style-border" name="phone" id="phone"
-                                        placeholder="Phone Number" maxlength="10">
-                                </div>
-                            </div>
-                            <div class="col-lg-12">
-                                <div class="form-group">
-                                    <textarea name="message" placeholder="Details" id="contact-message"
-                                        class="form-control style-border"></textarea>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-btn col-12">
-                            <button type="submit" class="btn mt-20">
-                                <span class="link-effect">
-                                    <span class="effect-1">LET'S MAKE IT HAPPEN</span>
-                                    <span class="effect-1">LET'S MAKE IT HAPPEN</span>
-                                </span>
-                            </button>
-                        </div>
-                    </form>
-                </div>
+    <% if (data.companyLocationIframe) { %>
+        <% let mapFrame=data.companyLocationIframe ; %>
+            <div class="contact-map shape-mockup wow img-custom-anim-left" data-wow-duration="1.5s"
+                data-wow-delay="0.2s" data-left="0" data-top="-100px" data-bottom="140px">
+                <%- mapFrame %>
             </div>
-        </div>
-    </div>
+            <% } %>
+                <div class="container">
+                    <div class="row align-items-center justify-content-end">
+                        <div class="<%= data.companyLocationIframe ? 'col-lg-6' : 'col-lg-12' %>">
+                            <div class="contact-form-wrap">
+                                <div class="title-area mb-30">
+                                    <h2 class="sec-title">Let’s Start Your Project Today</h2>
+                                    <p>Have a question or ready to get started? Fill out the form below or contact us
+                                        directly,
+                                        and we’ll get back to you as
+                                        soon as possible.</p>
+                                </div>
+                                <form id="contact-form" action="/contact" method="POST"
+                                    class="contact-form ajax-contact">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control style-border" name="name"
+                                                    id="name" placeholder="Full name*" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <input type="email" class="form-control style-border" name="email"
+                                                    id="email" placeholder="Email address*" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <div class="form-group">
+                                                <input type="tel" class="form-control style-border" name="phone"
+                                                    id="phone" placeholder="Phone Number" maxlength="10">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <div class="form-group">
+                                                <textarea name="message" placeholder="Details" id="contact-message"
+                                                    class="form-control style-border"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-btn col-12">
+                                        <button type="submit" class="btn mt-20">
+                                            <span class="link-effect">
+                                                <span class="effect-1">LET'S MAKE IT HAPPEN</span>
+                                                <span class="effect-1">LET'S MAKE IT HAPPEN</span>
+                                            </span>
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 </div>
 
 <!-- Snackbar Notification -->

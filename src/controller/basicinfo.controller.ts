@@ -19,10 +19,10 @@ export const upsertBasicInfo = async (req: Request, res: Response, next: NextFun
             return generateResponse(res, 500, {}, "Body is required");
         }
         let resp = ""
-        Object.keys(body).forEach(async (key) => {
+        await Promise.all(Object.keys(body).map(async (key) => {
             const response = await basicInfoService.updateAndCreateBasicInfo(key, body[key]);
             resp = response.message
-        })
+        }))
         return generateResponse(res, 200, resp);
     } catch (error: any) {
         return generateResponse(res, 500, {}, error.message);

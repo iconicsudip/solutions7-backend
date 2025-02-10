@@ -42,11 +42,8 @@ export class BasicInfoService {
         })
         let message = "";
         if (existingBasicInfo) {
-            await BasicInfo.update({
-                value: JSON.stringify(value)
-            }, {
-                type
-            })
+            existingBasicInfo.value = JSON.stringify(value);
+            await existingBasicInfo.save()
             message = "updated"
         } else {
             const info = new BasicInfo();
