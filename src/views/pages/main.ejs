@@ -49,11 +49,7 @@
 </head>
 <style>
     :root {
-        --theme-color: <%- headers.basicInfo.websiteThemeColor ? `#$ {
-            headers.basicInfo.websiteThemeColor
-        }
-
-        `: '#E3FF04' %>;
+        --theme-color: <%- headers.basicInfo.websiteThemeColor ? `#${headers.basicInfo.websiteThemeColor}`: '#E3FF04' %>;
     }
 </style>
 
