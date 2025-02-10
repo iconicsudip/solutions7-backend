@@ -8,7 +8,7 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>
-        <%= title %>
+        <%= title %> - <%= headers.basicInfo.companyName %>
     </title>
     <meta name="description" content="Frisk - Creative Agency & Portfolio HTML Template">
     <meta name="keywords" content="Frisk - Creative Agency & Portfolio HTML Template">
@@ -49,7 +49,11 @@
 </head>
 <style>
     :root {
-        --theme-color: <%- headers.basicInfo.websiteThemeColor ? `#${headers.basicInfo.websiteThemeColor}`: '#E3FF04' %>;
+        --theme-color: <%- headers.basicInfo.websiteThemeColor ? `#$ {
+            headers.basicInfo.websiteThemeColor
+        }
+
+        `: '#E3FF04' %>;
     }
 </style>
 

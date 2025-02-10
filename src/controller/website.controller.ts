@@ -39,7 +39,7 @@ export const homePage = async (req: Request, res: Response, next: NextFunction):
             bannerInfo
         }
 
-        return res.render('pages/main', { title: 'Home - 7solutions', body: 'home', data: response });
+        return res.render('pages/main', { title: 'Home', body: 'home', data: response });
     } catch (error: any) {
         return generateResponse(res, 500, {}, error.message);
     }
@@ -55,7 +55,7 @@ export const servicesPage = async (req: Request, res: Response, next: NextFuncti
                 image: unsplashImage.results[0].urls.regular
             }
         }))
-        return res.render('pages/main', { title: 'Services - 7solutions', body: 'services', data: serviceWithImage });
+        return res.render('pages/main', { title: 'Services', body: 'services', data: serviceWithImage });
     } catch (error: any) {
         return generateResponse(res, 500, {}, error.message);
     }
@@ -63,7 +63,7 @@ export const servicesPage = async (req: Request, res: Response, next: NextFuncti
 
 export const pricingPage = async (req: Request, res: Response, next: NextFunction): Promise<any> => {
     try {
-        return res.render('pages/main', { title: 'Pricing - 7solutions', body: 'pricing' });
+        return res.render('pages/main', { title: 'Pricing', body: 'pricing' });
     } catch (error: any) {
         return generateResponse(res, 500, {}, error.message);
     }
@@ -72,7 +72,7 @@ export const pricingPage = async (req: Request, res: Response, next: NextFunctio
 export const contactPage = async (req: Request, res: Response, next: NextFunction): Promise<any> => {
     try {
         const contactInfo = await basicInfoService.getBasicInfoByTypes(["companyEmail", "companyLocation", "companyPhoneNumber", "companyLocationIframe"])
-        return res.render('pages/main', { title: 'Contact - 7solutions', body: 'contact', data: contactInfo });
+        return res.render('pages/main', { title: 'Contact', body: 'contact', data: contactInfo });
     } catch (error: any) {
         return generateResponse(res, 500, {}, error.message);
     }
