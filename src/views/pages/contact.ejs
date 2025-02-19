@@ -1,51 +1,55 @@
 <div class="feature-area-1 space" style="margin-top: 4rem;">
     <div class="container">
         <div class="row gy-4 align-items-center justify-content-center">
-            <div class="col-xl-4 col-md-6">
-                <div class="feature-card">
-                    <div class="feature-card-icon">
-                        <img src="assets/img/icon/location-pin-alt.svg" alt="icon">
-                    </div>
-                    <div class="feature-card-details">
-                        <h4 class="feature-card-title">
-                            Office Location
-                        </h4>
-                        <p class="feature-card-text">
-                            <%= data.companyLocation %>
-                        </p>
-
-                        <a href="https://maps.google.com/" class="link-btn">
-                            <span class="link-effect">
-                                <span class="effect-1">Get direction</span>
-                                <span class="effect-1">Get direction</span>
-                            </span>
-                            <img src="assets/img/icon/arrow-left-top.svg" alt="icon">
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-4 col-md-6">
-                <div class="feature-card">
-                    <div class="feature-card-icon">
-                        <img src="assets/img/icon/speech-bubble.svg" alt="icon">
-                    </div>
-                    <div class="feature-card-details">
-                        <h4 class="feature-card-title">
-                            Email Address
-                        </h4>
-                        <p class="feature-card-text">
-                            <%= data.companyEmail %>
-                        </p>
-                        <a href="mailto:<%= data.companyEmail %>" class="link-btn">
-                            <span class="link-effect">
-                                <span class="effect-1">LET'S MAKE IT HAPPEN</span>
-                                <span class="effect-1">LET'S MAKE IT HAPPEN</span>
-                            </span>
-                            <img src="assets/img/icon/arrow-left-top.svg" alt="icon">
-                        </a>
+            <% if (data.companyLocation) { %>
+                <div class="col-xl-4 col-md-6">
+                    <div class="feature-card">
+                        <div class="feature-card-icon">
+                            <img src="assets/img/icon/location-pin-alt.svg" alt="icon">
+                        </div>
+                        <div class="feature-card-details">
+                            <h4 class="feature-card-title">
+                                Office Location
+                            </h4>
+                            <p class="feature-card-text">
+                                <%= data.companyLocation %>
+                            </p>
+    
+                            <a href="https://maps.google.com/" class="link-btn">
+                                <span class="link-effect">
+                                    <span class="effect-1">Get direction</span>
+                                    <span class="effect-1">Get direction</span>
+                                </span>
+                                <img src="assets/img/icon/arrow-left-top.svg" alt="icon">
+                            </a>
+                        </div>
                     </div>
                 </div>
-            </div>
+            <% } %>
+            <% if (data.companyEmail) { %>
+                <div class="col-xl-4 col-md-6">
+                    <div class="feature-card">
+                        <div class="feature-card-icon">
+                            <img src="assets/img/icon/speech-bubble.svg" alt="icon">
+                        </div>
+                        <div class="feature-card-details">
+                            <h4 class="feature-card-title">
+                                Email Address
+                            </h4>
+                            <p class="feature-card-text">
+                                <%= data.companyEmail %>
+                            </p>
+                            <a href="mailto:<%= data.companyEmail %>" class="link-btn">
+                                <span class="link-effect">
+                                    <span class="effect-1">LET'S MAKE IT HAPPEN</span>
+                                    <span class="effect-1">LET'S MAKE IT HAPPEN</span>
+                                </span>
+                                <img src="assets/img/icon/arrow-left-top.svg" alt="icon">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            <% } %>
             <div class="col-xl-4 col-md-6">
                 <div class="feature-card">
                     <div class="feature-card-icon">
@@ -55,14 +59,9 @@
                         <h4 class="feature-card-title">
                             Contact Number
                         </h4>
-                        <p class="feature-card-text">SEO & Brand Building : +91 98049 12967
-                        </p>
-<p class="feature-card-text">Website : +91 90733 83828
-                        </p>
-<p class="feature-card-text">Marketing : +91 72786 58300
-                        </p>
+                        <p class="feature-card-text">+91 <%= data.companyPhoneNumber %></p>
 
-                        <a href="#" class="link-btn">
+                        <a href="tel:<%= data.companyPhoneNumber %>" class="link-btn">
                             <span class="link-effect">
                                 <span class="effect-1">Call anytime</span>
                                 <span class="effect-1">Call anytime</span>
