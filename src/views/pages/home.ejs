@@ -2,6 +2,173 @@
     .h-22rem {
         height: 22rem;
     }
+
+    .projects-section {
+        padding: 4rem 2rem;
+        background: #f9f9f9;
+        text-align: center;
+    }
+
+    /* .projects-section h2 {
+        font-size: 2.5rem;
+        color: #333;
+        margin-bottom: 0.5rem;
+    } */
+
+    .subtitle {
+        color: #666;
+        font-size: 1.1rem;
+        margin-bottom: 2rem;
+    }
+
+    /* Tabs Styling */
+    .projects-tabs {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .tab-btn {
+        padding: 0.75rem 1.5rem;
+        background: white;
+        border: 1px solid #ddd;
+        border-radius: 30px;
+        cursor: pointer;
+        font-weight: 600;
+        transition: all 0.3s ease;
+    }
+
+    .tab-btn:hover {
+        background: #f0f0f0;
+    }
+
+    .tab-btn.active {
+        background: #333;
+        color: white;
+        border-color: #333;
+    }
+
+    /* Projects Grid */
+    .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 2rem;
+        margin: 0 auto;
+        max-width: 1200px;
+    }
+
+    .project-card {
+        background: white;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+    }
+
+    .project-card:hover {
+        transform: translateY(-5px);
+    }
+
+    .project-image {
+        height: 200px;
+        overflow: hidden;
+    }
+
+    .project-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+    }
+
+    .project-card:hover .project-image img {
+        transform: scale(1.05);
+    }
+
+    .project-content {
+        padding: 1.5rem;
+        text-align: left;
+    }
+
+    .project-content h3 {
+        font-size: 1.3rem;
+        margin-bottom: 0.75rem;
+        color: #222;
+    }
+
+    .project-content p {
+        color: #666;
+        margin-bottom: 1rem;
+        line-height: 1.5;
+    }
+
+    .project-stats {
+        display: flex;
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+        flex-wrap: wrap;
+    }
+
+    .project-stats span {
+        background: #f5f5f5;
+        padding: 0.3rem 0.8rem;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        font-weight: 600;
+        color: #333;
+    }
+
+    .project-link {
+        display: inline-block;
+        color: #333;
+        font-weight: 600;
+        text-decoration: none;
+        border-bottom: 2px solid #333;
+        padding-bottom: 0.2rem;
+        transition: all 0.3s ease;
+    }
+
+    .project-link:hover {
+        color: #000;
+        border-bottom-color: #000;
+    }
+
+    .cta-container {
+        margin-top: 3rem;
+    }
+
+    .cta-button {
+        display: inline-block;
+        padding: 1rem 2rem;
+        background: #333;
+        color: white;
+        text-decoration: none;
+        font-weight: 600;
+        border-radius: 4px;
+        transition: all 0.3s ease;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .cta-button:hover {
+        background: #000;
+        transform: translateY(-2px);
+    }
+
+    @media (max-width: 768px) {
+        .projects-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .projects-tabs {
+            justify-content: flex-start;
+            overflow-x: auto;
+            padding-bottom: 1rem;
+            -webkit-overflow-scrolling: touch;
+        }
+    }
 </style>
 <% const content=data.aboutUs.description; const contentArray=content.split("\n"); %>
     <div class="hero-wrapper hero-1" id="hero">
@@ -81,6 +248,195 @@
             </div>
         </div>
     </div>
+
+    <section class="projects-section">
+
+        <div class="title-area text-center ">
+            <h2 class="sec-title">
+                Our Projects
+            </h2>
+        </div>
+
+        <!-- Tab Navigation -->
+        <div class="projects-tabs">
+            <button class="tab-btn active" data-category="wdd">Website Design & Development</button>
+            <button class="tab-btn" data-category="seo">SEO</button>
+            <button class="tab-btn" data-category="elg">Email & Lead Generation</button>
+            <button class="tab-btn" data-category="cm">Creative Marketing</button>
+            <button class="tab-btn" data-category="ad">App Development</button>
+        </div>
+
+        <!-- Projects Grid -->
+        <div class="projects-grid">
+            <div class="project-card" data-category="wdd">
+                <div class="project-image">
+                    <img src="assets/img/project/avisun.png" alt="avisunproperties">
+                </div>
+                <div class="project-content">
+                    <p>Developed, migrated, and optimized Avisun Properties’ website for speed, SEO, and UX, boosting
+                        performance, visibility,
+                        and delivering a seamless digital experience.</p>
+                </div>
+            </div>
+            <div class="project-card" data-category="wdd">
+                <div class="project-image">
+                    <img src="assets/img/project/apexbeat.png" alt="Fashion Ecommerce Redesign">
+                </div>
+                <div class="project-content">
+                    <p>We designed, developed, and deployed Apexbeat, a Pharma’s service website, integrating a
+                        streamlined online booking
+                        system to enhance user convenience, brand credibility, and accessibility across all devices.</p>
+                </div>
+            </div>
+            <div class="project-card" data-category="wdd">
+                <div class="project-image">
+                    <img src="assets/img/project/icce.png" alt="Fashion Ecommerce Redesign">
+                </div>
+                <div class="project-content">
+                    <p>We designed and developed ICCE’s website for a UK-based client, featuring online courses, exam
+                        booking, and secure
+                        payment integration, delivering a seamless, user-focused digital learning platform.</p>
+                </div>
+            </div>
+
+            <div class="project-card" data-category="cm">
+                <div class="project-image">
+                    <img src="assets/img/project/nightlife.jpeg" alt="Nightlife">
+                </div>
+                <div class="project-content">
+                    <h3>Nightlife</h3>
+                    <p>We energize nightlife brands through bold design, curated moodboards, strategic posting, and
+                        storytelling content,
+                        creating immersive experiences that drive engagement and elevate after-dark identities.</p>
+                </div>
+            </div>
+            <div class="project-card" data-category="cm">
+                <div class="project-image">
+                    <img src="assets/img/project/jwellery.jpg" alt="jwellery">
+                </div>
+                <div class="project-content">
+                    <h3>⁠Jewellery & Accessories</h3>
+                    <p>Full branding package increased new patient inquiries by 140% with cohesive visual identity and
+                        messaging.</p>
+                </div>
+            </div>
+            <div class="project-card" data-category="cm">
+                <div class="project-image">
+                    <img src="assets/img/project/luxury.jpg" alt="Luxury">
+                </div>
+                <div class="project-content">
+                    <h3>Luxury Furnishings</h3>
+                    <p>From elegant visuals to content calendars, we shape jewellery and accessory brands with refined
+                        design, storytelling,
+                        and strategy that highlights craftsmanship, trends, and luxury appeal.
+                    </p>
+                </div>
+            </div>
+            <div class="project-card" data-category="cm">
+                <div class="project-image">
+                    <img src="assets/img/project/hospitality.jpg" alt="Hospitality">
+                </div>
+                <div class="project-content">
+                    <h3>Hospitality</h3>
+                    <p>Our creative marketing enhances hospitality brands with atmospheric moodboards, content
+                        consultancy, and strategic
+                        posting, showcasing experiences, ambiance, and service with a visual story guests remember.
+                    </p>
+                </div>
+            </div>
+            <div class="project-card" data-category="cm">
+                <div class="project-image">
+                    <img src="assets/img/project/realestate.jpg" alt="Realestate">
+                </div>
+                <div class="project-content">
+                    <h3>Real Estate</h3>
+                    <p>We position high-end properties with tailored content, design, and scheduling, bringing lifestyle
+                        and space to life
+                        through compelling storytelling, moodboards, and strategic brand direction.
+                    </p>
+                </div>
+            </div>
+            <div class="project-card" data-category="cm">
+                <div class="project-image">
+                    <img src="assets/img/project/fashion.jpg" alt="Fashion">
+                </div>
+                <div class="project-content">
+                    <h3>Fashion</h3>
+                    <p>We power fashion brands with trend-driven visuals, strategic content, and seasonal planning,
+                        fusing moodboarding,
+                        design, and consultancy to express identity and spark audience connection.
+                    </p>
+                </div>
+            </div>
+
+            <div class="project-card" data-category="elg">
+                <div class="project-image">
+                    <img src="assets/img/project/email_1.jpeg" alt="Real Estate Website">
+                </div>
+                <div class="project-content">
+                    <p>Our expertise in email marketing played a crucial role in the client’s success. Through our
+                        outreach campaign, we helped
+                        Bingeme, a similar platform, scale their business effectively.
+                    </p>
+                </div>
+            </div>
+            <!-- <div class="project-card" data-category="seo">
+                <div class="project-image">
+                    <img src="assets/img/projects/see.png" alt="Real Estate Website">
+                </div>
+                <div class="project-content">
+                    <h3>Real Estate Website</h3>
+                    <p>SEO strategy improved organic traffic by 300% in 6 months, leading to a 50% increase in leads.
+                    </p>
+                </div>
+            </div> -->
+            <div class="project-card" data-category="ad">
+                <div class="project-image">
+                    <img src="assets/img/project/app_design.png" alt="Real Estate Website">
+                </div>
+                <div class="project-content">
+                    <!-- <h3>Real Estate Website</h3> -->
+                    <p>Developed a doctor-patient consultation app with login roles, e-prescriptions, appointment
+                        booking, and a refer-and-earn
+                        system to enhance healthcare access and organic user growth.
+                    </p>
+                </div>
+            </div>
+            <div class="project-card" data-category="ad">
+                <div class="project-image">
+                    <img src="assets/img/project/checkvalet.webp" alt="Real Estate Website">
+                </div>
+                <div class="project-content">
+
+                    <p>Built a B2B e-commerce app connecting garment manufacturers and retailers, streamlining order
+                        placement, communication,
+                        and transactions to transform the traditional apparel supply chain.
+
+                    </p>
+                </div>
+            </div>
+            <div class="project-card" data-category="ad">
+                <div class="project-image">
+                    <img src="assets/img/project/qude.webp" alt="Real Estate Website">
+                </div>
+                <div class="project-content">
+
+                    <p>Created a valet service app enabling real-time booking, vehicle tracking, and secure parking
+                        management at hotels,
+                        malls, and events, eliminating the hassle of finding parking spots.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- <a href="contact" class="btn">
+            <span class="link-effect">
+                <span class="effect-1">SEE IT IN ACTION</span>
+                <span class="effect-1">SEE IT IN ACTION</span>
+            </span>
+        </a> -->
+    </section>
 
     <div class="faq-area-1 space overflow-hidden">
         <div class="container">
@@ -169,47 +525,83 @@
             </div>
         </div>
         <% } %>
-<% if (data.testimonial.testimonials.length) { %>
-    <div class="testimonial-area-1 space bg-theme mt-0">
-        <div class="testimonial-img-1-1 shape-mockup wow img-custom-anim-right" data-wow-duration="1.5s"
-            data-wow-delay="0.2s" data-right="0" data-bottom="80px">
-            <img src="assets/img/testimonial/testi.png" alt="img">
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="title-area ">
-                        <h2 class="sec-title">
-                            <%= data.testimonial.title %>
-                        </h2>
+            <% if (data.testimonial.testimonials.length) { %>
+                <div class="testimonial-area-1 space bg-theme mt-0">
+                    <div class="testimonial-img-1-1 shape-mockup wow img-custom-anim-right" data-wow-duration="1.5s"
+                        data-wow-delay="0.2s" data-right="0" data-bottom="80px">
+                        <img src="assets/img/testimonial/testi.png" alt="img">
                     </div>
-                    <div class="quote-icon ">
-                        <img src="assets/img/icon/quote.svg" alt="icon">
-                    </div>
-                    <div class="row global-carousel testi-slider1" data-slide-show="1" data-dots="true"
-                        data-xl-dots="true" data-ml-dots="true">
-                        <% data.testimonial.testimonials.forEach((testimonial, index)=> {%>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="title-area ">
+                                    <h2 class="sec-title">
+                                        <%= data.testimonial.title %>
+                                    </h2>
+                                </div>
+                                <div class="quote-icon ">
+                                    <img src="assets/img/icon/quote.svg" alt="icon">
+                                </div>
+                                <div class="row global-carousel testi-slider1" data-slide-show="1" data-dots="true"
+                                    data-xl-dots="true" data-ml-dots="true">
+                                    <% data.testimonial.testimonials.forEach((testimonial, index)=> {%>
 
-                            <div class="col-lg-4">
-                                <div class="testi-box ">
-                                    <p class="testi-box_text">
-                                        <%= testimonial.testimonial %>
-                                    </p>
-                                    <div class="testi-box_profile">
-                                        <h4 class="testi-box_name">
-                                            <%= testimonial.name %>
-                                        </h4>
-                                        <span class="testi-box_desig">
-                                            <%= testimonial.designation %>
-                                        </span>
-                                    </div>
+                                        <div class="col-lg-4">
+                                            <div class="testi-box ">
+                                                <p class="testi-box_text">
+                                                    <%= testimonial.testimonial %>
+                                                </p>
+                                                <div class="testi-box_profile">
+                                                    <h4 class="testi-box_name">
+                                                        <%= testimonial.name %>
+                                                    </h4>
+                                                    <span class="testi-box_desig">
+                                                        <%= testimonial.designation %>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <% }); %>
                                 </div>
                             </div>
-                            <% }); %>
+                        </div>
+
                     </div>
                 </div>
-            </div>
+                <% } %>
 
-        </div>
-    </div>
-<% } %>
+
+
+                    <script>
+                        document.addEventListener('DOMContentLoaded', function () {
+                            const tabButtons = document.querySelectorAll('.tab-btn');
+                            const projectCards = document.querySelectorAll('.project-card');
+                            const activeCateory = document.querySelector('.tab-btn.active').getAttribute('data-category');
+                            projectCards.forEach(card => {
+                                if (card.getAttribute('data-category') === activeCateory) {
+                                    card.style.display = 'block';
+                                } else {
+                                    card.style.display = 'none';
+                                }
+                            });
+                            tabButtons.forEach(button => {
+                                button.addEventListener('click', () => {
+                                    // Remove active class from all buttons
+                                    tabButtons.forEach(btn => btn.classList.remove('active'));
+                                    // Add active class to clicked button
+                                    button.classList.add('active');
+
+                                    const category = button.getAttribute('data-category');
+
+                                    // Filter projects
+                                    projectCards.forEach(card => {
+                                        if (card.getAttribute('data-category') === category) {
+                                            card.style.display = 'block';
+                                        } else {
+                                            card.style.display = 'none';
+                                        }
+                                    });
+                                });
+                            });
+                        });
+                    </script>
